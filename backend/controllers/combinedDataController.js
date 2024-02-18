@@ -3,7 +3,7 @@ const getCombinedData = async (req, res) => {
     try {
       const { month } = req.query;
 
-      const backendUrl = process.env.url || "http://localhost:8000"
+      const backendUrl = process.env.URL || "http://localhost:8000"
   
       // Fetch data from all APIs
       const transactionsResponse = await fetch(`${backendUrl}/api/transactions?month=${month}`);

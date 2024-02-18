@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
 
-const mongoUrl = "mongodb+srv://hrithikgupta52:Password@cluster1.d02on4b.mongodb.net/test2"
+dotenv.config()
+
+const mongoUrl = process.env.MONGO_URL
 
 const connectToMongo = async () => {
     try {
