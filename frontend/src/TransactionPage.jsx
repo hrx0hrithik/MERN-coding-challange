@@ -4,7 +4,7 @@ import TransactionsStatistics from './components/TransactionsStatistics';
 import TransactionsBarChart from './components/TransactionsBarChart';
 import TransactionPieChart from './components/TransactionPieChart';
 
-const BackendUrl = process.env.BACKEND_URL;
+const BackendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const TransactionsPage = () => {
     const [transactions, setTransactions] = useState([]);
