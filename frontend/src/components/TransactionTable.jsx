@@ -3,7 +3,7 @@ const TransactionsTable = ({ transactions, handlePrevPage, handleNextPage, page,
   return (
     <>
       <div className='mx-5 my-2'>
-        <table className='my-1 table-auto border-separate border-spacing-1 border border-slate-500 rounded-lg min-w-[80vw]'>
+        <table className='my-1 mx-auto table-auto border-separate border-spacing-1 border border-slate-500 rounded-lg min-w-[75vw] max-w-[85vw]'>
           <thead className='border'>
             <tr>
               <th className='border border-slate-600 px-2 py-1 rounded-lg'>ID</th>
@@ -16,15 +16,19 @@ const TransactionsTable = ({ transactions, handlePrevPage, handleNextPage, page,
             </tr>
           </thead>
           <tbody>
-            { noResultsFound ? <tr><td colSpan={7} className='rounded-lg border border-slate-700 px-2 text-center'>No items found try different keyword</td></tr> : transactions.map(transaction => (
+            {noResultsFound ? <tr><td colSpan={7} className='rounded-lg border border-slate-700 px-2 text-center'>No items found try different keyword</td></tr> : transactions.map(transaction => (
               <tr key={transaction.id}>
                 <td className='rounded-lg border border-slate-700 px-2 text-center'>{transaction.id}</td>
                 <td className='rounded-lg border border-slate-700 px-2 text-center'>{transaction.title}</td>
                 <td className='rounded-lg border border-slate-700 p-2 '>{transaction.description}</td>
                 <td className='rounded-lg border border-slate-700 px-2 text-center'>{transaction.price}</td>
                 <td className='rounded-lg border border-slate-700 px-2 text-center'>{transaction.category}</td>
-                <td className='rounded-lg border border-slate-700 '>{transaction.sold}</td>
-                <td className='rounded-lg border border-slate-700 '> <img className='rounded-lg' src={transaction.image} alt={transaction.image} /></td>
+                <td className='rounded-lg border border-slate-700 text-center font-bold '>{transaction.sold ? <p className="text-red-500 px-2">Sold</p> : <p className="text-green-600 px-2">Avalaible</p>}</td>
+                <td className='rounded-lg border border-slate-700'>
+                  <div className="flex justify-center">
+                    <img className='rounded-lg max-w-[8vw] max-h-[20vh]' src={transaction.image} alt={transaction.image} />
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>

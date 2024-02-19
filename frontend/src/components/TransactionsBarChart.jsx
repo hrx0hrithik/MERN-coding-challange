@@ -65,9 +65,9 @@ const TransactionsBarChart = ({ chartData }) => {
   };
 
   return (
-    <div className='flex flex-col items-center my-5 p-3'>
-      <h2 className='text-[32px]'>Transactions Bar Chart</h2>
-      <div className='w-[80vw] flex flex-col items-center '>
+    <div className='w-[60vw] m-2'>
+      <h2 className='text-[30px] text-center m-2'>Transactions Bar Chart</h2>
+      <div className='flex flex-col items-center mt-6'>
         <Bar
           data={data}
           options={options}

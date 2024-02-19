@@ -111,8 +111,8 @@ const TransactionsPage = () => {
         <div>
             <h2 className='text-[32px] text-center'>Transactions Table</h2>
             <div className='flex justify-between'>
-                <input className='p-2 mx-4 my-3 text-center rounded-lg' type="text" value={searchText} onChange={(e) => handleSearch(e.target.value)} placeholder="Search transactions" />
-                <select className='p-2 mx-4 my-3 text-center rounded-md' value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}>
+                <input className='p-2 mx-4 text-center rounded-lg' type="text" value={searchText} onChange={(e) => handleSearch(e.target.value)} placeholder="Search transactions" />
+                <select className='p-2 mx-4 text-center rounded-md' value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}>
                     <option value="1">January</option>
                     <option value="2">February</option>
                     <option defaultChecked value="3">March</option>
@@ -136,8 +136,10 @@ const TransactionsPage = () => {
                 noResultsFound={noResultsFound}
             />
             <TransactionsStatistics stats={stats} selectedMonth={selectedMonth} />
-            <TransactionsBarChart chartData={chartData} />
-            <TransactionPieChart pieChartData={pieChartData} />
+            <div className='flex w-[95vw] h-[80vh] items-start justify-center'>
+                <TransactionsBarChart chartData={chartData} />
+                <TransactionPieChart pieChartData={pieChartData} />
+            </div>
         </div>
     );
 };
