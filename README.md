@@ -1,8 +1,70 @@
-# React + Vite
+# MERN Stack Coding Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a MERN (MongoDB, Express.js, React.js, Node.js) stack application for managing transactions. It provides a backend API for transaction listing, statistics, and bar chart data retrieval, and a frontend interface for visualizing and interacting with the transaction data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## APIs
+
+### Backend APIs 
+
+- **Backend Hosted at**: [https://mern-test-vmlt.onrender.com/](#)
+- **Initialize Database API**: [https://mern-test-vmlt.onrender.com/api](#)
+- **Transaction Listing API**: [https://mern-test-vmlt.onrender.com/api/transactions](#)
+- **Transactions Statistics API**: [https://mern-test-vmlt.onrender.com/api/statistics](#)
+- **Transactions Bar Chart API**: [https://mern-test-vmlt.onrender.com/api/bar-chart](#)
+- **Transactions Pie Chart API**: [https://mern-test-vmlt.onrender.com/api/pie-chart](#)
+- **Combined Data API**:[https://mern-test-vmlt.onrender.com/api/combined-data](#)
+
+
+## Frontend [Link](https://mern-test123.netlify.app/)
+
+### Screenshots
+
+![Screenshot 1](/path/to/screenshot1.png)
+![Screenshot 2](/path/to/screenshot2.png)
+![Screenshot 3](/path/to/screenshot3.png)
+
+
+### Getting Started
+
+To set up and run the frontend locally, follow these steps:
+
+1. **Clone the repository**: 
+git clone <https://github.com/hrx0hrithik/MERN-coding-challange/tree/main>
+
+2. **Navigate to the frontend directory**:
+cd frontend
+
+3. **Install dependencies**:
+npm install
+
+4. **Start the development server**:
+npm start
+5. **Open your browser**:
+Visit `http://localhost:5173` to view the frontend.
+
+Now, you should be able to see the frontend running locally on your machine.
+
+### Technologies Used
+The project is built using the following technologies/frameworks/libraries:
+#### Frontend:
+- [React](https://reactjs.org/): JavaScript library for building user interfaces.
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2): React wrapper for Chart.js to create charts in React applications.
+- [Chart.js](https://www.chartjs.org/): JavaScript library for creating interactive charts.
+- [Tailwind](https://tailwindcss.com/): CSS for developing responsive and mobile-first websites.
+- [react-loader-spinner](https://reactrouter.com/): Library for creating interactive loaders in React
+
+#### Backend:
+- [Node.js](https://nodejs.org/): JavaScript runtime for server-side development.
+- [Express](https://expressjs.com/): Web application framework for Node.js.
+- [Mongoose](https://mongoosejs.com/): MongoDB object modeling for Node.js, providing a straight-forward, schema-based solution to model application data.
+
+#### Development Dependencies:
+- [Nodemon](https://nodemon.io/): Utility that monitors for changes in your server code and automatically restarts the server.
+
+
+Feel free to explore the documentation of each technology/framework/library to learn more about them.
+
+
