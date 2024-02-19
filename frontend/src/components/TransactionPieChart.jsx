@@ -36,7 +36,7 @@ const TransactionPieChart = ({ pieChartData }) => {
     return (
         <div className='flex flex-col items-center my-5 p-3'>
             <h2 className='text-[32px]'>Transaction Pie Chart</h2>
-            <div className='w-[50vw]'>
+            <div className='w-[50vw] flex flex-col items-center '>
                 <Pie data={data} />
             </div>
         </div>

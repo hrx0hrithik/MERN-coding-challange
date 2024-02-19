@@ -3,10 +3,13 @@ import TransactionsTable from './components/TransactionTable';
 import TransactionsStatistics from './components/TransactionsStatistics';
 import TransactionsBarChart from './components/TransactionsBarChart';
 import TransactionPieChart from './components/TransactionPieChart';
+import LoadingComp from './components/LoadingComp';
 
-const BackendUrl = process.env.REACT_APP_BACKEND_URL || "https://mern-test-vmlt.onrender.com";
+const BackendUrl = "https://mern-test-vmlt.onrender.com";
 
 const TransactionsPage = () => {
+    const [isLoading, setIsLoading] = useState(false);
+
     const [transactions, setTransactions] = useState([]);
     const [filteredTransactions, setFilteredTransactions] = useState([]);
     const [noResultsFound, setNoResultsFound] = useState(false);
@@ -26,18 +29,21 @@ const TransactionsPage = () => {
     }, [selectedMonth, page]);
 
     const fetchTransactions = async (month) => {
+        setIsLoading(true)
         try {
             const response = await fetch(`${BackendUrl}/api/transactions?month=${month}`);
             const data = await response.json();
             setFilteredTransactions([])
             setTransactions(data.transactions);
             setTotalPages(data.totalPages)
+            setIsLoading(false)
         } catch (error) {
             console.error('Error fetching transactions:', error);
         }
     };
 
     const fetchStatistics = async (month) => {
+        setIsLoading(true)
         try {
             const response = await fetch(`${BackendUrl}/api/statistics?month=${month}`);
             const data = await response.json();
@@ -48,6 +54,7 @@ const TransactionsPage = () => {
     };
 
     const fetchChartData = async (month) => {
+        setIsLoading(true)
         try {
             const response = await fetch(`${BackendUrl}/api/bar-chart?month=${month}`);
             const data = await response.json();
@@ -57,6 +64,7 @@ const TransactionsPage = () => {
         }
     }
     const fetchPieChartData = async (month) => {
+        setIsLoading(true)
         try {
             const response = await fetch(`${BackendUrl}/api/pie-chart?month=${month}`);
             const data = await response.json();
@@ -69,20 +77,20 @@ const TransactionsPage = () => {
 
     const handleSearch = (searchText) => {
         setSearchText(searchText);
-        if(searchText === ""){
+        if (searchText === "") {
             setFilteredTransactions(transactions)
         }
-        else{
-        const filteredTransactions = transactions.filter(transaction =>
-            transaction.title.toLowerCase().includes(searchText.toLowerCase()) ||
-            transaction.description.toLowerCase().includes(searchText.toLowerCase())
-        );
-        setFilteredTransactions(filteredTransactions);
-        if(filteredTransactions.length === 0){
-            setNoResultsFound(true)
-        }else{
-            setNoResultsFound(false)
-        }
+        else {
+            const filteredTransactions = transactions.filter(transaction =>
+                transaction.title.toLowerCase().includes(searchText.toLowerCase()) ||
+                transaction.description.toLowerCase().includes(searchText.toLowerCase())
+            );
+            setFilteredTransactions(filteredTransactions);
+            if (filteredTransactions.length === 0) {
+                setNoResultsFound(true)
+            } else {
+                setNoResultsFound(false)
+            }
         }
     };
 
@@ -94,6 +102,10 @@ const TransactionsPage = () => {
     const handlePrevPage = () => {
         setPage(page - 1);
     };
+
+    if (isLoading) {
+        return <LoadingComp />;
+    }
 
     return (
         <div>
@@ -115,13 +127,13 @@ const TransactionsPage = () => {
                     <option value="12">December</option>
                 </select>
             </div>
-            <TransactionsTable 
-             transactions={filteredTransactions.length ? filteredTransactions : transactions } 
-             handlePrevPage={handlePrevPage} 
-             handleNextPage={handleNextPage} 
-             page={page} 
-             totalPages={totalPages} 
-             noResultsFound={noResultsFound}
+            <TransactionsTable
+                transactions={filteredTransactions.length ? filteredTransactions : transactions}
+                handlePrevPage={handlePrevPage}
+                handleNextPage={handleNextPage}
+                page={page}
+                totalPages={totalPages}
+                noResultsFound={noResultsFound}
             />
             <TransactionsStatistics stats={stats} selectedMonth={selectedMonth} />
             <TransactionsBarChart chartData={chartData} />

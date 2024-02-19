@@ -3,7 +3,7 @@ const TransactionsTable = ({ transactions, handlePrevPage, handleNextPage, page,
   return (
     <>
       <div className='mx-5 my-2'>
-        <table className='my-1 table-auto border-separate border-spacing-1 border border-slate-500 rounded-lg'>
+        <table className='my-1 table-auto border-separate border-spacing-1 border border-slate-500 rounded-lg min-w-[80vw]'>
           <thead className='border'>
             <tr>
               <th className='border border-slate-600 px-2 py-1 rounded-lg'>ID</th>
@@ -16,7 +16,7 @@ const TransactionsTable = ({ transactions, handlePrevPage, handleNextPage, page,
             </tr>
           </thead>
           <tbody>
-            { noResultsFound ? <tr><td className='rounded-lg border border-slate-700 px-2 text-center'>No items found try different keyword</td></tr> : transactions.map(transaction => (
+            { noResultsFound ? <tr><td colSpan={7} className='rounded-lg border border-slate-700 px-2 text-center'>No items found try different keyword</td></tr> : transactions.map(transaction => (
               <tr key={transaction.id}>
                 <td className='rounded-lg border border-slate-700 px-2 text-center'>{transaction.id}</td>
                 <td className='rounded-lg border border-slate-700 px-2 text-center'>{transaction.title}</td>
