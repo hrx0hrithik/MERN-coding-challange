@@ -4,28 +4,19 @@
 
 This project is a MERN (MongoDB, Express.js, React.js, Node.js) stack application for managing transactions. It provides a backend API for transaction listing, statistics, and bar chart data retrieval, and a frontend interface for visualizing and interacting with the transaction data.
 
+### Frontend hosted at -> [https://mern-test123.netlify.app/](https://mern-test123.netlify.app/)
 
 ## APIs
 
 ### Backend APIs 
 
-- **Backend Hosted at**: [https://mern-test-vmlt.onrender.com/](#)
-- **Initialize Database API**: [https://mern-test-vmlt.onrender.com/api](#)
-- **Transaction Listing API**: [https://mern-test-vmlt.onrender.com/api/transactions](#)
-- **Transactions Statistics API**: [https://mern-test-vmlt.onrender.com/api/statistics](#)
-- **Transactions Bar Chart API**: [https://mern-test-vmlt.onrender.com/api/bar-chart](#)
-- **Transactions Pie Chart API**: [https://mern-test-vmlt.onrender.com/api/pie-chart](#)
-- **Combined Data API**:[https://mern-test-vmlt.onrender.com/api/combined-data](#)
-
-
-## Frontend [Link](https://mern-test123.netlify.app/)
-
-### Screenshots
-
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
-![Screenshot 3](/path/to/screenshot3.png)
-
+- **Backend Hosted at**: [https://mern-test-vmlt.onrender.com/](https://mern-test-vmlt.onrender.com/)
+- **Initialize Database API**: [https://mern-test-vmlt.onrender.com/api/seed-data](#)
+- **Transaction Listing API**: [https://mern-test-vmlt.onrender.com/api/transactions](https://mern-test-vmlt.onrender.com/api/transactions)
+- **Transactions Statistics API**: [https://mern-test-vmlt.onrender.com/api/statistics](https://mern-test-vmlt.onrender.com/api/statistics)
+- **Transactions Bar Chart API**: [https://mern-test-vmlt.onrender.com/api/bar-chart](https://mern-test-vmlt.onrender.com/api/bar-chart)
+- **Transactions Pie Chart API**: [https://mern-test-vmlt.onrender.com/api/pie-chart](https://mern-test-vmlt.onrender.com/api/pie-chart)
+- **Combined Data API**:[https://mern-test-vmlt.onrender.com/api/combined-data](https://mern-test-vmlt.onrender.com/api/combined-data)
 
 ### Getting Started
 
@@ -66,5 +57,3 @@ The project is built using the following technologies/frameworks/libraries:
 
 
 Feel free to explore the documentation of each technology/framework/library to learn more about them.
-
-

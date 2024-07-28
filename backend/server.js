@@ -17,7 +17,7 @@ const barChartRoutes = require('./routes/barChartRoutes');
 const pieChartRoutes = require('./routes/pieChartRoutes');
 const combinedDataRoutes = require('./routes/combinedDataRoutes');
 
-app.use('/api', initializeDatabaseRoutes);
+app.use('/api/seed-data', initializeDatabaseRoutes);
 app.use('/api/transactions', transactionsRoutes);
 app.use('/api/statistics', statisticsRoutes);
 app.use('/api/bar-chart', barChartRoutes);
